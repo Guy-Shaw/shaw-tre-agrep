@@ -23,10 +23,10 @@ I have some sympathy for those who think we should all immediately convert every
 But silently dropping data does not seem to be the way to win over the unwashed masses.  To me, that is just a bug.
 
 The printf family of functions can simply not print anything
-if the format xxx is "%s" and the given string is not all valid UTF-8.
+if the format is "%s" and the given string is not all valid UTF-8.
 For that reason, I have replaced code that uses printf("%s", buf)
 with fputs(buf, stdout).
-fputs() may print out some Mojibake, but it does alway print something.
+fputs() may print out some Mojibake, but it does always print something.
 
 There is a school of thought that says that I get what I deserve
 if I send invalid data to a program.  But, it is all too often to
@@ -61,12 +61,12 @@ not the number of occurrences of matching text.  This is consistent with GNU gre
 
 ### indent
 
-I added the option `--indent=NUM`.  With this option, Filenames are printed only once, without indentation, and all the rest of the information is shown indented.
+I added the option `--indent=NUM`.  With this option, filenames are printed only once, on a line by itself, without indentation, and all the rest of the information is shown indented.
 
 This comes in really handy when the filenames are long paths.
 Often, it is desirable to know what the filename is, but it need not be repeated as a prefix for all the match output.
 
-I have implement the `indent=NUM` option for GNU grep, as well.
+I have implement the `--indent=NUM` option for GNU grep, as well.
 
 See `https://github.com/Guy-Shaw/grep-indent`
 
