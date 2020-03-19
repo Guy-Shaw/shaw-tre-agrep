@@ -384,9 +384,9 @@ tre_agrep_get_next_record(int fd, const char *filename)
 
           fprintf(stderr, "tre_regnexec: buf=%p, next_record=%p = buf+%zd\n",
               buf, next_record, next_record - buf);
-          fprintf(stderr, " = [");
+          fputs(" = [", stderr);
           fshow_str(stderr, dbg_buf);
-          fprintf(stderr, "]\n");
+          fputs("]\n", stderr);
       }
 #endif
 
